@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="bg-black w-full py-1 px-4 flex flex-col justify-center items-center md:flex-row md:justify-end">
+            <div class="">
+                <form action="/search" class="max-w-[400px] w-full">
+                    <div class="relative h-8">
+                        <input type="text" name="q"
+                            class="w-full border h-6 shadow p-4 rounded-full dark:text-gray-800 dark:border-gray-700 dark:bg-gray-200"
+                            placeholder="search" />
+                        <button type="submit">
+                            <svg class="text-teal-400 h-3 w-5 absolute top-3.5 right-3 fill-current dark:text-teal-300"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" x="0px" y="0px" viewBox="0 0 56.966 56.966"
+                                style="enable-background: new 0 0 56.966 56.966" xml:space="preserve">
+                                <path
+                                    d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <button class="rounded-lg px-8 py-1 text-white text-xl">log in</button>
+        </div>
+        <div class="flex my-4 mx-6 justify-between">
+            <nav class="border-gray-200">
+                <div class="container mx-auto flex flex-wrap gap-x-3 items-center">
+                    <a href="#" class="flex">
+                        <img src="/images/modern treasury.png" alt="MODERN TREASURY" width="250px" />
+                    </a>
+                    <button data-collapse-toggle="mobile-menu" type="button"
+                        class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
+                        aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+                        <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+                            <li>
+                                <a href="#"
+                                    class="bg-blue-700 text-xl md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded focus:outline-none"
+                                    aria-current="page">Platform</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-gray-700 text-xl hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Resources</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-gray-700 text-xl hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Documentation</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-gray-700 text-xl hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Pricing</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <button class="bg-blue-600 rounded-md text-lg text-white px-4 py-2 text-nowrap">
+                Talk to us
+            </button>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- section -->
+        <section class="w-full">
+            <div class="bg-black w-full px-6 py-3 flex flex-col sm:flex-row items-center justify-between xl:px-28">
+                <div class="flex flex-col sm:flex-row items-center  gap-6">
+                    <img src="/images/payment operation.png" alt="no image" width="150px" />
+                    <div class="text-white">
+                        <h1 class="text-xl">The State of payment Operation 2025</h1>
+                        <p class="max-w-sm lg:max-w-2xl">
+                            From instant payments to AI, our forth annual report covers the
+                            biggest payment transformation in decades.
+                        </p>
+                    </div>
+                </div>
+                <button class="bg-purple-600 rounded-md px-4 py-2 text-white text-nowrap">
+                    Get the Report
+                </button>
+            </div>
+            <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ...w- h-2"></div>
+            <div class="bg-[#151515] px-10 py-10 flex flex-col justify-between lg:flex-row items-center">
+                <div class=" ">
+                    <h1 class="text-white text-5xl font-semibold max-w-2xl">
+                        Payment Operations Built for the Instant Economy
+                    </h1>
+                    <p class="text-xl max-w-2xl text-slate-400 mt-4">
+                        Build your best business with faster payments, smart workflows,
+                        and real-time visibility, powered by AI.
+                    </p>
+                    <div class="flex gap-x-6 mt-5">
+                        <button class="bg-blue-500 px-5 py-2 text-lg font-medium rounded-md">
+                            Talk to us
+                        </button>
+                        <button class="px-5 py-2 border rounded-md text-blue-500">
+                            ->Watch a demo
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <img src="/images/earth.png" alt="payment operation" />
+                </div>
+            </div>
+        </section>
+        <!-- section 1 -->
+        <section>
+            <div class="text-center mt-32 px-8 lg:px-10">
+                <p class="text-slate-700 font-medium">USE CASES</p>
+                <h1 class="mt-5 font-bold text-2xl lg:text-4xl">Get Ready for Real-Time</h1>
+                <p class="mt-4 text-xl lg:text-2xl max-w-3xl mx-auto text-slate-700">Welcome to the Instant Economy,
+                    where
+                    consumers expect fast, seamless experiences, and companies must deliver in real-time.</p>
+            </div>
+            <div class="flex gap-x-4 justify-center mt-16 text-lg lg:text-2xl font-semibold px-10 lg:gap-x-8">
+                <h1 class=" ">Faster Payments</h1>
+                    <h1 class=" text-slate-700">Smart Workflows</h1>
+                <p class=" text-slate-700">Real Time-Visibility</p>
+            </div>
+            <div class="flex flex-col items-center  px-6 mt-16 mb-28 mx-10  lg:flex-row bg-slate-200 ">
+                <img class="" src="/Images/fasterPayment.webp" alt="Faser payment" width="550rem">
+                <div class="bg-slate-200 py-10 lg:pt-32 lg:pb-16 px-2 lg:px-10  ">
+                    <h1 class="font-bold text-xl lg:text-4xl">Faster Payments</h1>
+                    <p class="mt-4 text-lg lg:text-2xl  text-slate-700">Accelerate payments through the automation of
+                        traditional and faster payment rails.</p>
+                    <div class="flex mt-10 gap-2">
+                        <i class="fa-solid fa-check text-lg lg:text-2xl  text-slate-700 "></i>
+                        <p class="text-lg lg:text-2xl  text-slate-700 ">Programmatically, initiate, track, and reconcile
+                            payments across global banks and rails.</p>
+                    </div>
+                    <div class="flex gap-2 mt-4 ">
+                        <i class="fa-solid fa-check text-lg lg:text-2xl  text-slate-700"></i>
+                        <p class=" text-lg lg:text-2xl  text-slate-700">Integrate instant payments (RTP, FedNow) to
+                            improve
+                            customer experiences and reduce costs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-- section 2 -->
+        <section class="mt-32">
+            <div class="text-center mt-32 px-8 lg:px-10">
+                <p class="text-slate-700 font-medium">For Product Teams</p>
+                <h1 class="mt-5 font-bold text-2xl lg:text-4xl">One Platform for Payment Operations</h1>
+                <p class="mt-4 text-xl lg:text-2xl max-w-4xl mx-auto text-slate-700">Empower your business and delight
+                    your
+                    customers with the only platform that moves, tracks, and reconciles payments in real-time.</p>
+                <button class="mt-12 bg-blue-600 py-3 px-6 rounded-md text-xl font-semibold text-white ">Explor the
+                    Platform<i class="fa-solid fa-arrow-right ml-2"></i></button>
+            </div>
+            <div class="flex flex-col mt-12 px-10 gap-x-16 gap-y-8 items-center justify-center lg:flex-row">
+                <div class="max-w-2xl">
+                    <h1 class="mt-5 font-bold text-2xl lg:text-4xl">Automate Money Movement</h1>
+                    <p class="mt-4 text-xl lg:text-2xl  text-slate-700">Programmatically move money via traditional and
+                        instant
+                        payment rails at over 40+ global banks.</p>
+                    <button class="mt-12 bg-blue-600 py-3 px-6 rounded-md text-xl font-semibold text-white ">Explore
+                        Payments<i class="fa-solid fa-arrow-right ml-2"></i></button>
+                </div>
+                <img src="/Images/explorePayments.svg" alt="Explore Payments" width="570rem">
+            </div>
+            <div class="flex flex-col-reverse mt-12 px-10   items-center gap-x-16 gap-y-8 justify-center lg:flex-row">
+                <video src="/Images/trackTransactions.mp4" width="570rem" control loop autoplay></video>
+                <div class="max-w-2xl">
+                    <h1 class="mt-5 font-bold text-2xl lg:text-4xl">Track Transactions Seamlessly</h1>
+                    <p class="mt-4 text-xl lg:text-2xl  text-slate-700">Track and manage transactions and balances in a
+                        performant database. Unify your financial data and make sense of it with AI.</p>
+                    <button class="mt-12 bg-blue-600 py-3 px-6 rounded-md text-xl font-semibold text-white ">Explor
+                        Ledgers<i class="fa-solid fa-arrow-right ml-2"></i></button>
+                </div>
+            </div>
+            <div class="flex flex-col mt-12 px-10  items-center gap-y-8 gap-x-16 justify-center lg:flex-row">
+                <div class="max-w-2xl">
+                    <h1 class="mt-5 font-bold text-2xl lg:text-4xl">Reconcile Transactions Continuously</h1>
+                    <p class="mt-4 text-xl lg:text-2xl  text-slate-700">Reconcile your payment operation transactions in
+                        real-time. Powered by granular matching, AI-driven exception management, and a system that
+                        learns and
+                        adapts over time.</p>
+                    <button class="mt-12 bg-blue-600 py-3 px-6 rounded-md text-xl font-semibold text-white ">Explor
+                        Reconciliation<i class="fa-solid fa-arrow-right ml-2"></i></button>
+                </div>
+                <video src="/Images//ReconsileTransactions.mp4" width="570rem" loop autoplay></video>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-10 mt-28 mb-36 px-20 lg:flex-row">
+                <div class="max-w-sm">
+                    <img src="/Images/Grade Security.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Enterprice-Grade Security</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">Support for RBAC, SSO, SCIM, and SIEM. SOC I, SOC
+                        II, and
+                        PCI DSS compliant.</p>
+                </div>
+                <div class="max-w-sm">
+                    <img src="/Images/seamless connectivity.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Seamless Connectivity</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">Start faster with pre-built integrations and
+                        flexible
+                        methods to ingest data via UI and API.</p>
+                </div>
+                <div class="max-w-sm">
+                    <img src="/Images/modular architecture.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Modular Architecture</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">Modernize your entire infrastructure, or solve
+                        specific
+                        pain points, at your pace.</p>
+                </div>
+                <div class="max-w-sm">
+                    <img src="/Images/rebust control.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Robust Controls</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">Granular, conditional, and sequenced approvals
+                        for
+                        payments and reconciliation.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center mt-32 mb-16 px-8 lg:px-10">
+                <p class="text-slate-500 font-medium text-lg">How Companies Use Modern Treasury</p>
+                <h1 class="mt-5 font-semibold text-2xl lg:text-5xl ">Payments Transformation is Business Transformation
+                </h1>
+                <p class="mt-4 text-xl lg:text-2xl max-w-4xl mx-auto text-slate-700">Whether your business is new to
+                    hyperscale
+                    or a generational company, Modern Treasury is the partner of choice.</p>
+            </div>
+            <div class="flex flex-wrap gap-10 justify-center  px-10 mb-32">
+                <div class="max-w-[360px]">
+                    <img src="/Images/navon.webp" alt="" width="340rem" height="180rem">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl ">Navan reimagined expense management</h1>
+                    <button class="mt-6 bg-blue-600 py-3 px-6 rounded-md text-xl font-semibold text-white ">Explor
+                        Ledgers<i class="Learn more"></i></button>
+                </div>
+                <div class="max-w-[360px]">
+                    <img src="/Images/c2fo.webp" alt="" width="340rem" height="180rem">
+                    <h1 class="mt-5 font-semibold text-xl max-w-lg lg:text-2xl ">C2FO increased revenue by entering the
+                        flow of
+                        funds</h1>
+                    <button class="mt-6 bg-blue-600 py-3 px-6 rounded-md text-xl font-semibold text-white ">Explor
+                        Ledgers<i class="Learn more"></i></button>
+                </div>
+                <div class="max-w-[360px]">
+                    <img src="/Images/drive wealth.webp" alt="" width="340rem" height="180rem">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl ">DriveWealth unlocked real-time reconciliation
+                    </h1>
+                    <button class="mt-6 bg-blue-600 py-3 px-6 rounded-md text-xl font-semibold text-white ">Explor
+                        Ledgers<i class="Learn more"></i></button>
+                </div>
+            </div>
+
+        </section>
+        <hr>
+        <!-- section 3 -->
+        <section class="mt-32 mb-32">
+            <div class="flex flex-col-reverse mt-12 px-10 items-center gap-y-10 gap-x-32 justify-center lg:flex-row">
+                <img src="/Images/AI.webp" alt="Explore Payments" width="570rem">
+                <div class="max-w-2xl">
+                    <p class="text-slate-700 text-lg font-medium">Designed for Confidence</p>
+                    <h1 class="mt-5 font-semibold max-w-sm text-2xl lg:text-5xl">AI That Puts You In Control</h1>
+                    <p class="mt-4 text-xl lg:text-2xl  text-slate-700">From controlled AI suggestions to granular
+                        permissions,
+                        Modern Treasury has everything enterprises need to confidently manage money at scale.</p>
+                    <button
+                        class="mt-12 bg-blue-600 py-3 px-6 rounded-md text-xl font-semibold text-white text-nowrap">Our
+                        Approach to AI<i class="fa-solid fa-arrow-right ml-2"></i></button>
+                </div>
+            </div>
+            <div class="flex flex-col mt-16 px-10 items-center gap-x-32 gap-y-10 justify-center lg:flex-row">
+                <div class="max-w-2xl">
+                    <p class="text-slate-700 text-lg font-medium">Professional Services</p>
+                    <h1 class="mt-5 font-semibold max-w-lg text-2xl lg:text-5xl">Expertise That Cuts Through Complexity
+                    </h1>
+                    <p class="mt-4 text-xl lg:text-2xl  text-slate-700">Reach your goals by collaborating with our
+                        expert team
+                        to implement faster, unlock new use cases, and scale efficiently.</p>
+                    <button class="mt-12 bg-blue-600 py-3 px-6 rounded-md text-xl font-semibold text-white ">Learn
+                        More<i class="fa-solid fa-arrow-right ml-2"></i></button>
+                </div>
+                <img src="/Images/expertise.webp" alt="Explore Payments" width="570rem">
+            </div>
+        </section>
+        <hr>
+        <!-- section 4 -->
+        <section class="mt-36">
+            <div class=" mb-14 px-10  lg:text-left lg:ml-26">
+                <h1 class="mt-5 font-semibold text-center mx-auto text-2xl max-w-3xl lg:text-5xl lg:mx-0">Resources for Payments and
+                    Product
+                    Leaders Everywhere</h1>
+            </div>
+            <hr>
+            <div class="mt-6  px-8 lg:px-10">
+                <div class="flex flex-wrap justify-center items-center gap-4 mb-16 lg:gap-x-28">
+                    <div class="flex flex-col gap-y-4 gap-x-4 max-w-xl justify-center md:gap-x-10 sm:flex-row">
+                        <div class="">
+                            <p class="text-slate-700 font-medium">Journal</p>
+                            <h1 class="text-slate-800 mt-2 text-xl font-medium max-w-3xl lg:text-2xl">Reconciliation is a Knapsack Problem</h1>
+                        </div>
+                        <img src="/Images/journal.webp" alt="" width="230rem">
+                    </div>
+                    <div class="flex flex-col gap-y-4  gap-x-4 max-w-xl md:gap-x-10 sm:flex-row">
+                        <div>
+                            <p class="text-slate-700 font-medium">Webinar</p>
+                            <h1 class="text-slate-800 mt-2 text-xl font-medium max-w-3xl lg:text-2xl">Building Resilient
+                                Payment
+                                Systems</h1>
+                        </div>
+                        <img src="/Images/webinar.webp" alt="" width="230rem">
+                    </div>
+                </div>
+                <hr>
+                <div class="flex flex-wrap justify-center items-center gap-4 mt-10 lg:gap-x-28">
+                    <div class="flex flex-col gap-y-4 gap-x-4 max-w-xl md:gap-x-10 sm:flex-row">
+                        <div>
+                            <h1 class="text-slate-800 text-xl font-medium max-w-3xl lg:text-2xl">Tech Talk: Real-Time
+                                Reconciliation</h1>
+                        </div>
+                        <img src="/Images/talk real time.webp" alt="" width="230rem">
+                    </div>
+                    <div class="flex flex-col gap-y-4 gap-x-4 max-w-xl md:gap-x-10 sm:flex-row">
+                        <div>
+                            <h1 class="text-slate-800 text-xl font-medium max-w-3xl lg:text-2xl">Real-Time Payments, A
+                                Generational Shift</h1>
+                        </div>
+                        <img src="/Images/real time payment.webp" alt="" width="230rem">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
