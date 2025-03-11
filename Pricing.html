@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Modern Treasury</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.3/tailwind.min.css"
+        integrity="sha512-wl80ucxCRpLkfaCnbM88y4AxnutbGk327762eM9E/rRTvY/ZGAHWMZrYUq66VQBYMIYDFpDdJAOGSLyIPHZ2IQ=="
+        crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        font-family: 'Quicksand', sans-serif;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="bg-black w-full py-1 px-4 flex flex-col justify-center items-center md:flex-row md:justify-end">
+            <div class="">
+                <form action="/search" class="max-w-[400px] w-full">
+                    <div class="relative h-8">
+                        <input type="text" name="q"
+                            class="w-full border h-6 shadow p-4 rounded-full dark:text-gray-800 dark:border-gray-700 dark:bg-gray-200"
+                            placeholder="search" />
+                        <button type="submit">
+                            <svg class="text-teal-400 h-3 w-5 absolute top-3.5 right-3 fill-current dark:text-teal-300"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" x="0px" y="0px" viewBox="0 0 56.966 56.966"
+                                style="enable-background: new 0 0 56.966 56.966" xml:space="preserve">
+                                <path
+                                    d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <button class="rounded-lg px-8 py-1 text-white text-xl">log in</button>
+        </div>
+        <div class="flex py-4 px-6 bg-white   justify-between fixed w-full">
+            <nav class="border-gray-200">
+                <div class="container mx-auto flex flex-wrap gap-x-3 items-center">
+                    <a href="/index.html" class="flex">
+                        <img src="/images/modern treasury.png" alt="MODERN TREASURY" width="250px" />
+                    </a>
+                    <button data-collapse-toggle="mobile-menu" type="button"
+                        class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
+                        aria-controls="mobile-menu-2" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+                        <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+                            <li>
+                                <a href="#"
+                                    class="bg-blue-700 text-xl md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded focus:outline-none"
+                                    aria-current="page">Platform</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-gray-700 text-xl hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Resources</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="text-gray-700 text-xl hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Documentation</a>
+                            </li>
+                            <li>
+                                <a href="/pricing.html"
+                                    class="text-gray-700 text-xl hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="/contact.html"><button class="bg-blue-600  rounded-md text-lg text-white px-4 py-2 text-nowrap md:hidden">
+                                    Talk to us
+                                </button></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <a href="/contact.html"><button class="bg-blue-600 hidden rounded-md text-lg text-white px-4 py-2 text-nowrap md:block">
+                Talk to us
+            </button></a>
+        </div>
+    </header>
+    <main>
+        <!-- Hero section -->
+        <section class="bg-black flex flex-col gap-4 items-center p-36 mt-2">
+            <p class=" text-slate-400 text-xl">Pricing</p>
+            <h1 class=" text-white text-center font-semibold  text-3xl lg:text-7xl">Predictable Pricing, Designed for
+                Scale
+            </h1>
+            <a href="/contact.html"><button class="mt-4 text-center bg-blue-400  rounded-md text-xl  text-black font-semibold px-6 py-4 text-nowrap">
+                Talk to us<i class="ml-2 fa-solid fa-arrow-right"></i>
+            </button></a>
+        </section>
+        <!-- section 1 -->
+        <section class="px-10 mt-28 ">
+            <div class="flex flex-col gap-16 md:flex-row">
+                <div>
+                    <img src="/Images/check.png" alt="" class="w-20 h-18">
+                    <h1 class="mt-4 font-semibold text-2xl">Upfront, predictable pricing</h1>
+                    <p class="text-xl font-normal">Know what you’ll pay ahead of time with no consumption-based or
+                        per-transaction pricing</p>
+                </div>
+                <div>
+                    <img src="/Images/check.png" alt="" class="w-20 h-18">
+                    <h1 class="mt-4 font-semibold text-2xl">Fit to your company’s needs</h1>
+                    <p class="text-xl font-normal">Pricing plans based on the elements of our platform that you actually
+                        use</p>
+                </div>
+                <div>
+                    <img src="/Images/check.png" alt="" class="w-20 h-18">
+                    <h1 class="mt-4 font-semibold text-2xl">Competitive at scale</h1>
+                    <p class="text-xl font-normal">Flexible tiers to support rapid company growth and product expansion
+                    </p>
+                </div>
+            </div>
+            <div class="bg-[#C4E0F4] flex flex-col justify-center items-center px-4 gap-8 mt-16 py-16">
+                <h1 class="font-semibold text-center text-2xl lg:text-5xl">Comprehensive plans for enterprises</h1>
+                <p class="font-normal text-center text-2xl">Pricing designed for scale.</p>
+                <a href="/contact.html"><button class="mt-4 text-center bg-blue-400  rounded-md text-xl  text-white font-semibold px-6 py-4 text-nowrap">
+                    Talk to us<i class="ml-2 fa-solid fa-arrow-right"></i>
+                </button></a>
+            </div>
+        </section>
+        <!-- section 2 -->
+        <section class="p-10 mt-20 bg-[#F4F4F2]">
+            <div>
+                <p class="text-slate-700 text-lg font-medium">Platform Overview</p>
+                <h1 class="mt-5 font-semibold text-2xl max-w-4xl lg:text-5xl">Modern Treasury is the operating system
+                    for
+                    payments</h1>
+            </div>
+            <div class="flex flex-col justify-center items-start gap-16 mt-16  md:flex-row">
+                <div class="max-w-md">
+                    <img src="/Images/Pricing page images/bank payments API.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Bank payments API</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">Programmatic money movement in 12+ rails and 50+
+                        currencies.</p>
+                </div>
+                <div class="max-w-md">
+                    <img src="/Images/Pricing page images/Reconciliation.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Reconciliation</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">Always-on and real-time status on money movement.
+                    </p>
+                </div>
+                <div class="max-w-md">
+                    <img src="/Images/Pricing page images/Ledger Database.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Ledger database</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">A source of truth for all of money movement.</p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-center items-start gap-16 mt-16 md:flex-row">
+                <div class="max-w-md">
+                    <img src="/Images/Pricing page images/Integration.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Integrations & warehouse sync</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">Push data to your warehouse and ingest data from
+                        other systems.
+                    </p>
+                </div>
+                <div class="max-w-md">
+                    <img src="/Images/Pricing page images/Unified dashboards.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Unified dashboards</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">A single pane of glass into your cash positions.
+                    </p>
+                </div>
+                <div class="max-w-md">
+                    <img src="/Images/Pricing page images/Virtual Accounts.png" alt="">
+                    <h1 class="mt-5 font-semibold text-xl lg:text-2xl">Virtual accounts</h1>
+                    <p class="mt-4 text-lg lg:text-xl  text-slate-700">Programmatically manage bank accounts.</p>
+                </div>
+            </div>
+            <div class="bg-[#C4E0F4] flex flex-col items-center justify-center gap-8 mt-16 p-4">
+                <h1 class="font-semibold text-2xl sm:text-5xl">Navan</h1>
+                <p class="font-normal text-xl text-center max-w-5xl">“It became clear to me very quickly that Modern
+                    Treasury is more than just a technology service. You manage all the
+                    operational details and nuances of integrating new banks and payment methods for us to continue
+                    improving the core
+                    product.”
+                <p>
+                <p class="font-medium text-center text-2xl text-gray-500">Yuval Refua · VP of Expense Management Product
+                    at Navan</p>
+            </div>
+        </section>
+        <!-- Pricing FAQS -->
+        <section class="">
+            <article id="the-article">
+
+                <div>
+                    <div class="mx-auto max-w-6xl">
+                        <div class="p-2 rounded">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/3 p-4 text-sm">
+
+                                    <div class="sticky inset-x-0 top-0 left-0 py-12">
+
+                                        <div class="text-xs text-gray-600">Learn more</div>
+                                        <div class="text-5xl font-semibold mb-8 mt-4">Pricing FAQs</div>
+
+
+
+
+                                    </div>
+                                </div>
+                                <div class="md:w-2/3 py-12 ">
+                                    <div class="p-4">
+
+                                        <div class="item px-6 py-6" x-data="{isOpen : false}">
+                                            <a href="#" class="flex items-center justify-between"
+                                                @click.prevent="isOpen = true">
+                                                <h4 :class="{'text-green-400 font-medium' : isOpen == true}">What are
+                                                    your
+                                                    transaction fees?
+                                                </h4>
+                                                <svg :class="{'transform rotate-180' : isOpen == true}"
+                                                    class="w-5 h-5 text-gray-500" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </a>
+                                            <div x-show="isOpen" @click.away="isOpen = false" class="mt-3"
+                                                :class="{'text-gray-600' : isOpen == true}">
+                                                <p>Our pricing structure is primarily based on products and features
+                                                    utilized. We do not charge per transaction fees nor
+                                                    basis points per transaction.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <div class="item px-6 py-6" x-data="{isOpen : false}">
+                                            <a href="#" class="flex items-center justify-between"
+                                                @click.prevent="isOpen = true">
+                                                <h4 :class="{'text-green-400 font-medium' : isOpen == true}">Do you sit
+                                                    in
+                                                    the flow of funds?
+                                                </h4>
+                                                <svg :class="{'transform rotate-180' : isOpen == true}"
+                                                    class="w-5 h-5 text-gray-500" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </a>
+                                            <div x-show="isOpen" @click.away="isOpen = false" class="mt-3"
+                                                :class="{'text-gray-600' : isOpen == true}">
+                                                <p>No. Modern Treasury does not hold your funds in our bank accounts or
+                                                    route transactions by touching your money. When you initiate a
+                                                    payment
+                                                    order, for instance, we are sending an instruction to your
+                                                    underlying
+                                                    bank partner. We are an independent software layer built on top of
+                                                    your
+                                                    bank partner.</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <div class="item px-6 py-6" x-data="{isOpen : false}">
+                                            <a href="#" class="flex items-center justify-between"
+                                                @click.prevent="isOpen = true">
+                                                <h4 :class="{'text-green-400 font-medium' : isOpen == true}">What kinds
+                                                    of
+                                                    companies use Modern Treasury?
+                                                </h4>
+                                                <svg :class="{'transform rotate-180' : isOpen == true}"
+                                                    class="w-5 h-5 text-gray-500" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </a>
+                                            <div x-show="isOpen" @click.away="isOpen = false" class="mt-3"
+                                                :class="{'text-gray-600' : isOpen == true}">
+                                                <p>Modern Treasury works with companies from the Fintech 50 list to
+                                                    Fortune
+                                                    500:
+
+                                                    Fast-growing companies: Our bank payments and ledgering APIs are
+                                                    used by
+                                                    startups to launch products that move money,
+                                                    from lending to digital wallets to programmatic payouts.
+                                                    Large complex enterprises: Our reconciliation engine, robust
+                                                    controls,
+                                                    and bank network remove the pain of dealing with
+                                                    multiple rails, banks, and payment processes.
+                                                    If you are facing complexities in money movement, be it because
+                                                    money is
+                                                    a core part of your product or service or
+                                                    because of your size, we can help. For more information on how we
+                                                    work
+                                                    with customers, you can review our case studies
+                                                    here.</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <div class="item px-6 py-6" x-data="{isOpen : false}">
+                                            <a href="#" class="flex items-center justify-between"
+                                                @click.prevent="isOpen = true">
+                                                <h4 :class="{'text-green-400 font-medium' : isOpen == true}">What if my
+                                                    needs have changed after a contract is closed?
+                                                </h4>
+                                                <svg :class="{'transform rotate-180' : isOpen == true}"
+                                                    class="w-5 h-5 text-gray-500" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </a>
+                                            <div x-show="isOpen" @click.away="isOpen = false" class="mt-3"
+                                                :class="{'text-gray-600' : isOpen == true}">
+                                                <p>We are happy to work with you to ensure pricing reflects your current
+                                                    needs.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <div class="item px-6 py-6" x-data="{isOpen : false}">
+                                            <a href="#" class="flex items-center justify-between"
+                                                @click.prevent="isOpen = true">
+                                                <h4 :class="{'text-green-400 font-medium' : isOpen == true}">How does
+                                                    customer support work at Modern Treasury?
+                                                </h4>
+                                                <svg :class="{'transform rotate-180' : isOpen == true}"
+                                                    class="w-5 h-5 text-gray-500" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </a>
+                                            <div x-show="isOpen" @click.away="isOpen = false" class="mt-3"
+                                                :class="{'text-gray-600' : isOpen == true}">
+                                                <p>Payments are complex and hard to navigate. For that reason, quality
+                                                    in
+                                                    customer service is core to the work we do.
+                                                    Customers are assigned a customer success manager to handle go-live
+                                                    and
+                                                    day-to-day needs. We also offer optional
+                                                    professional implementation services for customers with complex use
+                                                    cases.</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </article>
+
+            <div x-data="scrollHandler(document.getElementById('the-article'))" x-cloak aria-hidden="true"
+                @scroll.window="calculateHeight(window.scrollY)"
+                class="fixed h-screen w-1 hover:bg-gray-200 top-0 left-0 bg-gray-300">
+                <div :style="`max-height:${height}%`" class="h-full bg-green-400"></div>
+            </div>
+
+            <div id="alpine-devtools" x-data="devtools()" x-show="alpines.length" x-init="start()">
+            </div>
+
+        </section>
+        <section class="px-10">
+            <div class="bg-[#12362E] flex flex-col justify-center items-center gap-8 mt-16 px-10 py-16">
+                <h1 class=" text-2xl text-center text-white sm:text-5xl">Try Modern Treasury and experience the future
+                    of money movement.</h1>
+                <a href="/Contact.html"><button
+                    class="mt-4 text-center bg-[#69B894] hidden rounded-md text-xl  text-black font-semibold px-6 py-4 text-nowrap md:block">
+                    Talk to us<i class="ml-2 fa-solid fa-arrow-right"></i>
+                </button></a>
+            </div>
+        </section>
+
+    </main>
+    <footer class="bg-black p-6 mt-20 md:p-12">
+        <div class="flex flex-col gap-y-10  justify-between mb-10 md:flex-row">
+            <div>
+                <p class="text-white text-2xl">Subscribe to Journal updates</p>
+                <p class="text-slate-300 mt-4 text-xl">Discover product features and get primers on the payments
+                    industry.</p>
+            </div>
+            <button class="bg-blue-500 px-10 py-2 text-xl font-medium rounded-lg h-10  ">Subscribe</button>
+        </div>
+        <hr>
+        <div class="p-5 flex flex-col justify-between md:flex-row">
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Products</li>
+                <li class="text-slate-400"><a href="">Payments</a></li>
+                <li class="text-slate-400"><a href="">Ledgers</a></li>
+                <li class="text-slate-400"><a href="">Reconciliation</a></li>
+            </ul>
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Platform</li>
+                <li class="text-slate-400"><a href="">Integration</a></li>
+                <li class="text-slate-400"><a href="">Platform Overview</a></li>
+                <li class="text-slate-400"><a href="">Pricing</a></li>
+                <li class="text-slate-400"><a href="">Security</a></li>
+            </ul>
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Modern Treasury For</li>
+                <li class="text-slate-400"><a href="">Finance</a></li>
+                <li class="text-slate-400"><a href="">Developers</a></li>
+                <li class="text-slate-400"><a href="">Banks</a></li>
+            </ul>
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Case Studies</li>
+                <li class="text-slate-400"><a href="">Customer Stories</a></li>
+                <li class="text-slate-400"><a href="">Procore</a></li>
+                <li class="text-slate-400"><a href="">Alegeus</a></li>
+                <li class="text-slate-400"><a href="">Navan</a></li>
+            </ul>
+        </div>
+
+        <div class="px-5 pb-10 flex flex-col justify-between md:flex-row">
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Insights</li>
+                <li class="text-slate-400"><a href="">Knowledge Hub</a></li>
+                <li class="text-slate-400"><a href="">Journal</a></li>
+                <li class="text-slate-400"><a href="">Learn</a></li>
+            </ul>
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Documentation</li>
+                <li class="text-slate-400"><a href="">AI Quick Strat</a></li>
+                <li class="text-slate-400"><a href="">API Reference</a></li>
+                <li class="text-slate-400"><a href="">Release Notes</a></li>
+            </ul>
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Company</li>
+                <li class="text-slate-400"><a href="">About</a></li>
+                <li class="text-slate-400"><a href="">Newsroom</a></li>
+                <li class="text-slate-400"><a href="">Careers</a></li>
+                <li class="text-slate-400"><a href="">Contact</a></li>
+            </ul>
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Legal</li>
+                <li class="text-slate-400"><a href="">Privacy Policies</a></li>
+                <li class="text-slate-400"><a href="">Terms of Service</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div class="p-10 flex flex-wrap justify-between">
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Popular Guides</li>
+                <li class="text-slate-400"><a href="">ACH Return Code Tool</a></li>
+                <li class="text-slate-400"><a href="">When and How to Set Up an FBO Account</a></li>
+            </ul>
+            <ul class="text-xl leading-10">
+                <li class="text-slate-400"><a href="">Which bank partner is best for you?</a></li>
+                <li class="text-slate-400"><a href="">How to decode any bank statement</a></li>
+            </ul>
+            <ul class="text-xl leading-10">
+                <li class="text-white ">Popular Integrations</li>
+                <li class="text-slate-400"><a href="">BMO</a></li>
+                <li class="text-slate-400"><a href="">JP Morgan Chase</a></li>
+                <li class="text-slate-400"><a href="">Cross Rivre</a></li>
+            </ul>
+            <ul class="text-xl leading-10">
+                <li class="text-white "></li>
+                <li class="text-slate-400"><a href="">Wells Fargo</a></li>
+                <li class="text-slate-400"><a href="Goldman Sachs"></a></li>
+            </ul>
+        </div>
+
+    </footer>
+    <script>
+        function scrollHandler(element = null) {
+            return {
+                height: 0,
+                element: element,
+                calculateHeight(position) {
+                    const distanceFromTop = this.element.offsetTop
+                    const contentHeight = this.element.clientHeight
+                    const visibleContent = contentHeight - window.innerHeight
+                    const start = Math.max(0, position - distanceFromTop)
+                    const percent = (start / visibleContent) * 100;
+                    requestAnimationFrame(() => {
+                        this.height = percent;
+                    });
+                },
+                init() {
+                    this.element = this.element || document.body;
+                    this.calculateHeight(window.scrollY);
+                }
+            };
+        }
+
+    </script>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+</body>
+
+</html>
